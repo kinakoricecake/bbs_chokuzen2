@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bbs</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  </head>
+
+  <body>
+    <% if current_user %>
+      <%= button_to'ログアウト', logout_path, method: :delete %>
+    <% else%>
+      <%= link_to'ホームへ戻る', root_path%>
+    <% end %>
+
+    <%= notice%>
+    <%= alert %>
+    <div class="container">
+     <%= yield %>
+    </div>
+
+  </body>
+</html>

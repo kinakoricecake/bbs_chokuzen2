@@ -1,0 +1,57 @@
+<h1>ユーザーの詳細</h1>
+<%= link_to '一覧', users_path %>
+
+<table>
+    <tbody>
+        <tr>
+            <th><%= User.human_attribute_name(:id) %></th>
+            <td><%= @user.id %></td>
+        </tr>
+
+        <tr>
+            <th><%= User.human_attribute_name(:name) %></th>
+            <td><%= @user.name %></td>
+        </tr>
+
+        <tr>
+            <th><%= User.human_attribute_name(:cname) %></th>
+            <td><%= @user.cname %></td>
+        </tr>
+
+        <tr>
+            <% if @user == current_user %>
+                <th><%= User.human_attribute_name(:email) %></th>
+                <td><%= @user.email %></td>
+            <% end %>
+        </tr>
+
+        <tr>
+            <th><%= User.human_attribute_name(:grade) %></th>
+            <td><%= @user.grade.to_s + "学年" %></td>
+        </tr>
+
+        <tr>
+            <th><%= User.human_attribute_name(:pta_officer) %></th>
+            <td><%= @user.pta_officer %></td>
+        </tr>
+
+        <tr>
+            <th><%= User.human_attribute_name(:pta_officer_history) %></th>
+            <td><%= @user.pta_officer_history %></td>
+        </tr>
+
+        <tr>
+            <th><%= User.human_attribute_name(:memo) %></th>
+            <td><%= @user.memo %></td>
+        </tr>
+
+        <tr>
+            <% if @user == current_user %>
+                <%= link_to "編集", edit_user_path %>
+                <%= button_to "削除", @user, method: :delete %>
+            <% end %>
+
+        </tr>
+
+    </tbody>
+</table>

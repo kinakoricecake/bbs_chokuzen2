@@ -1,0 +1,51 @@
+<%= form_with model: user, local: true do |f| %>
+    
+    <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %><br>
+    </div>
+
+    <div class="field">
+        <%= f.label :cname %><br>
+        <%= f.text_field :cname %><br>
+    </div>
+
+    <div class="field">
+        <%= f.label :email %><br>
+        <%= f.text_field :email %><br>
+    </div>
+
+    <div class="field">
+        <%= f.label :grade %><br>
+        <%= f.select :grade, options_for_select(["1年生", "2年生", "3年生", "4年生", "5年生", "6年生"]) %><br>
+    </div>
+
+    <div class="field">
+        <%= f.label :pta_officer %><br>
+        <%= f.select :pta_officer, options_for_select([ "なし", "交通部", "環境部", "広報部", "執行部"]) %><br>
+    </div>
+
+    <div class="field">
+        <%= f.label :pta_officer_history %><br>
+        <%= f.select :pta_officer_history, options_for_select(["未選出", "現役員", "元役員"])%><br>
+    </div>
+
+    <div class="field">
+        <%= f.label :memo %><br>
+        <%= f.text_field :memo %><br>
+    </div>
+
+    <div class="field">
+    <%= f.label :password%><br>
+    <%= f.password_field :password%><br>
+    </div>
+
+    <div class="field">
+    <%= f.label :password_confirmation%><br>
+    <%= f.password_field :password_confirmation%><br>
+    </div>
+
+    <div class="actions">
+        <%= f.submit('登録')%>
+    </div>
+<% end %>
