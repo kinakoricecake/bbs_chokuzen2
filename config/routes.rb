@@ -10,5 +10,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   #resources :posts, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :posts, except: [:show]
-  resources :users
+  resources :users do
+    collection do
+      get 'search'
+    end
+  end
 end
