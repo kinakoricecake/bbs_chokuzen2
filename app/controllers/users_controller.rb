@@ -1,9 +1,18 @@
 class UsersController < ApplicationController
   skip_before_action :login_required
-  before_action :search, only: :index
+  before_action :search, only: [:index, :search]
 
   def new
     @user = User.new
+  end
+
+  def search
+    @user = User.find(params[:id])
+    if @user = current_user
+      render "edit"
+    else
+      redirect_to users_path
+    end
   end
 
   def edit
@@ -21,13 +30,13 @@ class UsersController < ApplicationController
   end
 
   def search
-     #params[:q]のqには検索フォームに入力した値が入る
-     @q = User.ransack(params[:q])
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true)
   end
 
-
+ 
   def index
-    @users = @q.result(distinct: true)
+   @users = User.all
   end
 
   def create
@@ -56,6 +65,8 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :cname, :email, :grade, :pta_officer, :pta_officer_history, :memo, :password, :password_confirmation)
     end
-  
-  
+
+    def set_q
+      @q = User.ransack(params[:q])
+    end
 end

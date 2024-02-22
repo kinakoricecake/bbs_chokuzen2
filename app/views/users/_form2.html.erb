@@ -2,11 +2,29 @@
 <%= button_to'ログアウト', logout_path, method: :delete %>
 <table>
     <thead>
+    <h2>検索フォーム</h2>
         <%= search_form_for @q, url: search_users_path do |f| %>
             <%= f.label :name_cont, 'ユーザー名' %>
-            <%= f.search_field :name_cont %><%= f.submit ('検索')%>
+            <%= f.search_field :name_cont %><%= f.submit ('検索')%><br>
         <% end %>
-       
+        <%= search_form_for @q, url: search_users_path do |f| %>
+            <%= f.label :grade_eq, '学年' %>
+            <%= f.radio_button :grade_eq, '1' %>1学年
+            <%= f.radio_button :grade_eq, '2' %>2学年
+            <%= f.radio_button :grade_eq, '3' %>3学年
+            <%= f.radio_button :grade_eq, '4' %>4学年
+            <%= f.radio_button :grade_eq, '5' %>5学年
+            <%= f.radio_button :grade_eq, '6' %>6学年
+            <%= f.submit ('検索')%>
+            <br>
+        <% end %>
+        <%= search_form_for @q, url: search_users_path do |f| %>
+            <%= f.label :pta_officer_history_eq, '役員歴' %>
+            <%= f.radio_button :pta_officer_history_eq, '未選出' %>未選出
+            <%= f.radio_button :pta_officer_history_eq, '現役員' %>現役員
+            <%= f.radio_button :pta_officer_history_eq, '元役員' %>元役員
+            <%= f.submit ('検索')%>
+        <% end %>
         <tr>
             <th><%= User.human_attribute_name(:name) %></th>
             <th><%= User.human_attribute_name(:cname) %></th>

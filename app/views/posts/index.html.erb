@@ -1,6 +1,7 @@
 <h1>掲示板</h1>
 <div class="button-container">
-    <%= link_to "ユーザー一覧", users_path %><%= link_to "新しい投稿", new_post_path, class: "link-button" %>
+    <%= link_to "ユーザー一覧", users_path, class: "link-button" %><br><br>
+    <%= link_to "新しい投稿", new_post_path, class: "link-button" %>
 </div>
 <ul>
     <% @posts.each do |post| %>
