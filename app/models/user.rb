@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    
     validates :name, presence: true
     validates :cname, presence: true
     validates :email, presence: true, format: { with:/\w+/}
@@ -11,4 +12,5 @@ class User < ApplicationRecord
         ["name", "pta_officer_history", "grade"]
     end
 
+    
 end

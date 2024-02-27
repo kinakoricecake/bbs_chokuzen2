@@ -3,11 +3,11 @@
 <table>
     <thead>
      <h2>検索フォーム</h2>
-        <%= search_form_for @q, url: search_users_path do |f| %>
+        <% search_form_for @q, url: search_users_path do |f| %>
             <%= f.label :name_cont, 'ユーザー名' %>
             <%= f.search_field :name_cont %><%= f.submit ('検索')%><br>
         <% end %>
-        <%= search_form_for @q, url: search_users_path do |f| %>
+        <% search_form_for @q, url: search_users_path do |f| %>
             <%= f.label :grade_eq, '学年' %>
             <%= f.radio_button :grade_eq, '1' %>1学年
             <%= f.radio_button :grade_eq, '2' %>2学年
@@ -18,7 +18,7 @@
             <%= f.submit ('検索')%>
             <br>
         <% end %>
-        <%= search_form_for @q, url: search_users_path do |f| %>
+        <% search_form_for @q, url: search_users_path do |f| %>
             <%= f.label :pta_officer_history_eq, '役員歴' %>
             <%= f.radio_button :pta_officer_history_eq, '未選出' %>未選出
             <%= f.radio_button :pta_officer_history_eq, '現役員' %>現役員
@@ -38,17 +38,20 @@
     <tbody>
         <% @users.each do |user| %>
             <tr style="background-color:<%= cycle('#FFffFF', '#FFff99') %>">
-                <td><%= link_to user.name, user%></td>
-                <td><%= user.cname %></td>
-                <td><%= user.grade.to_s + "学年" %></td>
-                <td><%= user.pta_officer %></td>
-                <td><%= user.pta_officer_history %></td>
-                <td><%= user.memo %></td>
                 
+                <% if (grade7(user) < 7 ) %>
+                    <td><%= link_to user.name, user%></td>
+                    <td><%= user.cname %></td>
+                    <td><%= grade7(user).to_s + "学年" %></td>
+                    <td><%= user.pta_officer %></td>
+                    <td><%= user.pta_officer_history %></td>
+                    <td><%= user.memo %></td>
                     <% if user == current_user %>
                         <td><%= link_to "編集", "/users/#{user.id}/edit" %></td>
-                        <td><%= button_to "削除", user, method: :delete %></td>
+                        <td><%= button_to "削除", user, method: :delete,  data: {turbo_confirm: "削除しますか？"} %></td>
                     <% end %>
+                <% end %>
+                
                 
             </tr>
         <% end %>

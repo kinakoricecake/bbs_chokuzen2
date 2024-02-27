@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     helper_method :current_user
+    helper_method :grade7
     before_action :login_required
 
     private
@@ -11,7 +12,11 @@ class ApplicationController < ActionController::Base
         redirect_to login_url unless current_user
     end
 
-   
+    def grade7(post_class)
+        grade = post_class.grade
+        created = post_class.created_at.financial_year
+        grade += (Date.today.financial_year + 1 - created)
+    end
 
     
 end
