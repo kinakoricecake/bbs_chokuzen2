@@ -1,8 +1,8 @@
 <%= link_to '掲示板', posts_path %>
-<%= button_to'ログアウト', logout_path, method: :delete %>
+
 <table>
     <thead>
-    <h2>検索フォーム</h2>
+     <h2>検索フォーム</h2>
         <%= search_form_for @q, url: search_users_path do |f| %>
             <%= f.label :name_cont, 'ユーザー名' %>
             <%= f.search_field :name_cont %><%= f.submit ('検索')%><br>
@@ -37,13 +37,18 @@
 
     <tbody>
         <% @users.each do |user| %>
-            <tr>
+            <tr style="background-color:<%= cycle('#FFffFF', '#FFff99') %>">
                 <td><%= link_to user.name, user%></td>
                 <td><%= user.cname %></td>
                 <td><%= user.grade.to_s + "学年" %></td>
                 <td><%= user.pta_officer %></td>
                 <td><%= user.pta_officer_history %></td>
                 <td><%= user.memo %></td>
+                
+                    <% if user == current_user %>
+                        <td><%= link_to "編集", "/users/#{user.id}/edit" %></td>
+                        <td><%= button_to "削除", user, method: :delete %></td>
+                    <% end %>
                 
             </tr>
         <% end %>

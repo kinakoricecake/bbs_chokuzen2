@@ -94,7 +94,22 @@ body {
     cursor: pointer;
   }
   
+  .link-litle-delete-button {
+    display: inline-block;
+    background-color: #cc361f;
+    font-size: 17px;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 10px;
+    border: 1px solid;
+    cursor: pointer;
+  }
+
   .edit-delete-wrapper {
     display: flex;
     margin-top: 10px;
   }
+

@@ -4,5 +4,6 @@ class AddgradeToUsers < ActiveRecord::Migration[7.0]
     add_column :users, :pta_officer, :string
     add_column :users, :pta_officer_history, :string
     add_column :users, :memo, :string
+    add_column :users, :is_delete, :boolean, default: false, null: false
   end
 end

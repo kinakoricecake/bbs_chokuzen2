@@ -31,6 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_15_054317) do
     t.string "pta_officer"
     t.string "pta_officer_history"
     t.string "memo"
+    t.boolean "is_delete", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

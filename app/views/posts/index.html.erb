@@ -10,11 +10,15 @@
         <p><%= post.content %></p>
         <span>
             <small><%= post.created_at %></small><br>
-            <small><%= post.user.name %></small>
+            <%if post.user&.name == nil %>
+                <small><%= "退会したユーザーの投稿です" %></small>
+            <% else %>
+                <small><%= post.user.name %></small>
+            <% end %>
         </span>
 
         <div class="edit-delete-wrapper">
-            <% if current_user.name == post.user.name %>
+            <% if current_user.name == post&.user&.name %>
                 <%= link_to "編集", edit_post_path(post), class: "link-button" %>
                 <%= button_to "削除", post_path(post), method: :delete, class: "link-delete-button" %>
             <% end %>

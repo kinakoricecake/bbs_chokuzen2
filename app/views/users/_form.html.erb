@@ -1,5 +1,6 @@
 <%= form_with model: user, local: true do |f| %>
     
+    <%= user.pta_officer %>
     <div class="field">
         <%= f.label :name %><br>
         <%= f.text_field :name %><br>
@@ -17,17 +18,17 @@
 
     <div class="field">
         <%= f.label :grade %><br>
-        <%= f.select :grade, options_for_select(["1年生", "2年生", "3年生", "4年生", "5年生", "6年生"]) %><br>
+        <%= f.select :grade, [["1年生", 1], ["2年生", 2], ["3年生", 3], ["4年生", 4], ["5年生", 5], ["6年生", 6]] %><br>
     </div>
 
     <div class="field">
         <%= f.label :pta_officer %><br>
-        <%= f.select :pta_officer, options_for_select([ "なし", "交通部", "環境部", "広報部", "執行部"]) %><br>
+        <%= f.select :pta_officer, [ "なし", "交通部", "環境部", "広報部", "執行部"] %><br>
     </div>
 
     <div class="field">
         <%= f.label :pta_officer_history %><br>
-        <%= f.select :pta_officer_history, options_for_select(["未選出", "現役員", "元役員"])%><br>
+        <%= f.select :pta_officer_history, ["未選出", "現役員", "元役員"] %><br>
     </div>
 
     <div class="field">
