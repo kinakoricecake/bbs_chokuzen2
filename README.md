@@ -1,11 +1,8 @@
-# README
+# 小学校PTA役員の名簿兼掲示板アプリケーション
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![image](https://github.com/kinakoricecake/bbs_chokuzen2/assets/157467116/a6414183-5ee3-4c5c-936f-dce250698a2f)
 
-Things you may want to cover:
-
-* Ruby version
+* Ruby version 
 
 * System dependencies
 
