@@ -2,20 +2,11 @@
 
 ![image](https://github.com/kinakoricecake/bbs_chokuzen2/assets/157467116/a6414183-5ee3-4c5c-936f-dce250698a2f)
 
-* Ruby version 
+* Ruby version 3.2.2
 
-* System dependencies
+* Rails version 7.0.8
 
-* Configuration
+##なぜこのアプリケーションを作ったのか
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+私は現在小学生の子供がおり、今年は初めて小学校のPTAの役員をお願いされました。
+その時、前年度の役員さんが自宅まで夕食時に訪ねてこられて、
