@@ -30,30 +30,27 @@
 作成に至りました。
 
 ## 検索機能
-
+名前検索・学年検索・役員履歴検索を作り、まだ役員をやったことがない人を
+簡単に調べられるようにしました。
 ![image](https://github.com/kinakoricecake/bbs_chokuzen2/assets/157467116/e1807cad-aafa-4acd-981c-ecbf8a9a3eaa)
 
 ![image](https://github.com/kinakoricecake/bbs_chokuzen2/assets/157467116/3abbd5f6-eabe-46f5-b456-0378e27910a5)
 
 
-名前検索・学年検索・役員履歴検索を作り、まだ役員をやったことがない人を
-簡単に調べられるようにしました。
-
 ## 掲示板機能
-
+これまでの活動記録や連絡事項を掲示板で確認できるようにしました。
 ![image](https://github.com/kinakoricecake/bbs_chokuzen2/assets/157467116/56264a86-d324-4835-91c2-1a5f79bcbb26)
 
 
-これまでの活動記録や連絡事項を掲示板で確認できるようにしました。
-
 ## 卒業生を自動で非表示化
-
+Gem Fiscaliを用いて、卒業年度になったら、自動で非表示化するメソッドを
+作りました。
 ![image](https://github.com/kinakoricecake/bbs_chokuzen2/assets/157467116/df4233df-52df-4d05-be93-9ad19713706f)
 
 
-Gem Fiscaliを用いて、卒業年度になったら、自動で非表示化するメソッドを
-作りました。
-
 ## 今後実装したい機能
-掲示板を画像投稿できるように改良し、配布プリントのひな型など保存しておけるようにしたい。
+
+* 連絡のプリントのひな型を投稿できたりする画像投稿機能を追加し、プリントづくりの効率化を進めたい。
+  
+* cssやJavaScriptを使用して使いやすいUIにしていきたい。
 
