@@ -1,6 +1,7 @@
 # 小学校PTA役員の名簿兼掲示板アプリケーション
 
-![image](https://github.com/kinakoricecake/bbs_chokuzen2/assets/157467116/a6414183-5ee3-4c5c-936f-dce250698a2f)
+![image](https://github.com/kinakoricecake/bbs_chokuzen2/assets/157467116/48b03f3e-9fe6-4cb0-b00f-30144fc1ae9f)
+
 
 * Ruby version 3.2.2
 
@@ -30,7 +31,9 @@
 
 ## 検索機能
 
+![image](https://github.com/kinakoricecake/bbs_chokuzen2/assets/157467116/e1807cad-aafa-4acd-981c-ecbf8a9a3eaa)
 
+![image](https://github.com/kinakoricecake/bbs_chokuzen2/assets/157467116/3abbd5f6-eabe-46f5-b456-0378e27910a5)
 
 
 名前検索・学年検索・役員履歴検索を作り、まだ役員をやったことがない人を
@@ -38,11 +41,16 @@
 
 ## 掲示板機能
 
+![image](https://github.com/kinakoricecake/bbs_chokuzen2/assets/157467116/56264a86-d324-4835-91c2-1a5f79bcbb26)
 
 
 これまでの活動記録や連絡事項を掲示板で確認できるようにしました。
 
 ## 卒業生を自動で非表示化
+
+![image](https://github.com/kinakoricecake/bbs_chokuzen2/assets/157467116/df4233df-52df-4d05-be93-9ad19713706f)
+
+
 Gem Fiscaliを用いて、卒業年度になったら、自動で非表示化するメソッドを
 作りました。
 
